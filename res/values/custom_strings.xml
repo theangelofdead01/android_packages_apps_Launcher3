@@ -90,4 +90,11 @@
     <!-- Hotseat Background -->
     <string name="hotseat_bg_title">Show hotseat background</string>
     <string name="hotseat_bg_summary">Adds a translucent background to the app dock</string>
+
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">by default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 </resources>
