@@ -151,6 +151,7 @@ public final class Utilities {
             Build.TYPE.toLowerCase(Locale.ROOT).equals("eng");
 
     public static final String GSA_PACKAGE = "com.google.android.googlequicksearchbox";
+    public static final String SHOW_HOTSEAT_BG = "show_hotseat_bg";
 
     /**
      * Returns true if theme is dark.
@@ -945,5 +946,10 @@ public final class Utilities {
         } catch (PackageManager.NameNotFoundException e) {
             return false;
         }
+    }
+
+    public static boolean isDockBgEnabled(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SHOW_HOTSEAT_BG, true);
     }
 }

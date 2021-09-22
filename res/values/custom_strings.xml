@@ -86,4 +86,8 @@
     <string name="icon_pack_default_label">Default</string>
     <string name="icon_pack_add">Install more</string>
     <string name="icon_pack_no_market">There\'s no available app store</string>
+    
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Show hotseat background</string>
+    <string name="hotseat_bg_summary">Adds a translucent background to the app dock</string>
 </resources>

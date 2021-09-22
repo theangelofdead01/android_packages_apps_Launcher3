@@ -557,6 +557,17 @@ public class Launcher extends StatefulActivity<LauncherState>
     }
 
     @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { 
+        switch (key) {
+            case Utilities.SHOW_HOTSEAT_BG:
+                recreate();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
     public void onPluginConnected(LauncherOverlayPlugin overlayManager, Context context) {
         switchOverlay(() -> overlayManager.createOverlayManager(this, this));
     }
@@ -1254,6 +1265,8 @@ public class Launcher extends StatefulActivity<LauncherState>
         mOverviewPanel = findViewById(R.id.overview_panel);
         mHotseat = findViewById(R.id.hotseat);
         mHotseat.setWorkspace(mWorkspace);
+
+        mHotseat.setBackgroundResource(Utilities.isDockBgEnabled(this) ? R.drawable.bkg_appseat : 0);
 
         // Setup the drag layer
         mDragLayer.setup(mDragController, mWorkspace);
