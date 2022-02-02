@@ -133,4 +133,9 @@
     </string-array>
 
     <string name="custom_date_strings">EEE, MMM d</string>
+    
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Search</string>
+    <string name="label_lens">Google Lens</string>
+    <string name="label_voice_search">Voice search</string>
 </resources>
