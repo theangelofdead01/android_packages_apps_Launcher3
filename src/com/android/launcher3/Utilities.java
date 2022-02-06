@@ -159,6 +159,8 @@ public final class Utilities {
             Build.TYPE.toLowerCase(Locale.ROOT).equals("eng");
 
     public static final String GSA_PACKAGE = "com.google.android.googlequicksearchbox";
+    public static final String LENS_PACKAGE = "com.google.ar.lens";
+    public static final String LENS_ACTIVITY = "com.google.vr.apps.ornament.app.lens.LensLauncherActivity";
     public static final String SHOW_HOTSEAT_BG = "show_hotseat_bg";
     public static final String DESKTOP_SHOW_QUICKSPACE = "pref_show_quickspace";
     public static final String KEY_EXTENDED_QUICKSPACE = "pref_extended_quickspace";
