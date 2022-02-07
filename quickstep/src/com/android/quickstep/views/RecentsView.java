@@ -673,6 +673,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
     private Button mLockButtonView;
 
     private String mStartPkg, mEndPkg;
+    private MemInfoView mMemInfoView;
 
     private MultiWindowModeChangedListener mMultiWindowModeChangedListener =
             new MultiWindowModeChangedListener() {
@@ -902,12 +903,14 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
         updateTaskStackListenerState();
     }
 
-    public void init(OverviewActionsView actionsView, SplitSelectStateController splitController) {
+    public void init(OverviewActionsView actionsView, SplitSelectStateController splitController,
+                        MemInfoView memInfoView) {
         mActionsView = actionsView;
         mActionsView.updateHiddenFlags(HIDDEN_NO_TASKS, getTaskViewCount() == 0);
         mSplitSelectStateController = splitController;
         mLockButtonView = (Button) mActionsView.findViewById(R.id.action_lock);
         mLockButtonView.setOnClickListener(this::lockCurrentTask);
+        mMemInfoView = memInfoView;
     }
 
     public SplitSelectStateController getSplitPlaceholder() {
@@ -1654,9 +1657,10 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
         }
         mClearAllButton.setFullscreenProgress(fullscreenProgress);
 
+	float alpha = mapToRange(fullscreenProgress, 0, 0.1f, 1f, 0f, LINEAR);
         // Fade out the actions view quickly (0.1 range)
-        mActionsView.getFullscreenAlpha().setValue(
-                mapToRange(fullscreenProgress, 0, 0.1f, 1f, 0f, LINEAR));
+        mActionsView.getFullscreenAlpha().setValue(alpha);
+        mMemInfoView.setAlpha(MemInfoView.ALPHA_FS_PROGRESS, alpha);
     }
 
     private void updateTaskStackListenerState() {

@@ -310,4 +310,7 @@
     <string name="icon_pack_default_label">Default</string>
     <string name="icon_pack_add">Install more</string>
     <string name="icon_pack_no_market">There\'s no available app store</string>
+    
+    <!-- Memory info -->
+    <string name="meminfo_text">Approx. %1$s | %2$s</string>
 </resources>

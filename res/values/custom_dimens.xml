@@ -20,7 +20,7 @@
     <dimen name="bg_searchbox_radius">1000dp</dimen>
 
     <!-- Overview scrolling scale animation -->
-    <dimen name="overview_scroll_scale">0.95</dimen>
+    <dimen name="overview_scroll_scale">0.9</dimen>
 
     <!-- Mid clear all button -->
     <dimen name="mid_clear_all_radius">1000dp</dimen>
@@ -29,8 +29,8 @@
     <dimen name="mid_clear_all_bottom_margin_three_button">86dp</dimen>
 
      <!-- Meminfo in overview -->
-    <dimen name="meminfo_bottom_margin_gesture">4dp</dimen>
-    <dimen name="meminfo_bottom_margin_three_button">4dp</dimen>
+    <dimen name="meminfo_bottom_margin_gesture">34dp</dimen>
+    <dimen name="meminfo_bottom_margin_three_button">58dp</dimen>
 
     <!-- Extra bottom margin for overview TaskViews -->
     <dimen name="overview_task_extra_top_margin">88dp</dimen>
