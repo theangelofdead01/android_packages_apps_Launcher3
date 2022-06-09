@@ -141,6 +141,9 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
             case Utilities.KEY_BLUR_DEPTH:
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                 break;
+            case Utilities.KEY_VIBRATION_TOGGLE:
+                recreate();
+                break;
             default:
                 break;
         }

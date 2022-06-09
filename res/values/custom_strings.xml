@@ -254,4 +254,7 @@
     <!-- Wallpaper scrolling -->
     <string name="allow_wallpaper_scrolling">Wallpaper scrolling</string>
     <string name="allow_wallpaper_scrolling_desc">Wallpaper scrolling effect for multiple screens</string>
+
+   <!-- Recents Scroll Vibration -->
+    <string name="pref_recents_vibration_title">Enable haptic feedback on recents scroll</string>
 </resources>
