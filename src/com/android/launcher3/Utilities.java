@@ -171,6 +171,7 @@ public final class Utilities {
     public static final String KEY_BLUR_DEPTH = "pref_blur_depth";
     public static final String KEY_SEARCH_RADIUS = "pref_search_radius_size";
     public static final String KEY_VIBRATION_TOGGLE = "pref_recents_vibration";
+    public static final String KEY_ALLOW_WALLPAPER_ZOOMING = "pref_allow_wallpaper_zooming";
 
     /**
      * Returns true if theme is dark.
@@ -1041,4 +1042,9 @@ public final class Utilities {
     	SharedPreferences prefs = getPrefs(context.getApplicationContext());
     	return prefs.getBoolean(KEY_VIBRATION_TOGGLE, true);
    }
+
+    public static boolean canZoomWallpaper(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_ALLOW_WALLPAPER_ZOOMING, true);
+    }
 }
