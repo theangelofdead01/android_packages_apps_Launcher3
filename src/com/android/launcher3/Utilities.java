@@ -161,6 +161,8 @@ public final class Utilities {
     public static final String GSA_PACKAGE = "com.google.android.googlequicksearchbox";
     public static final String SHOW_HOTSEAT_BG = "show_hotseat_bg";
     public static final String DESKTOP_SHOW_QUICKSPACE = "pref_show_quickspace";
+    public static final String KEY_EXTENDED_QUICKSPACE = "pref_extended_quickspace";
+    public static final String KEY_QUICK_EVENTS_MSGS = "pref_show_qs_messages";
     public static final String KEY_DOCK_SEARCH = "pref_dock_search";
 
     /**
@@ -1000,5 +1002,15 @@ public final class Utilities {
     private static boolean isQSBEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_DOCK_SEARCH, true);
+    }
+    
+    public static boolean showQuickEventsMsgs(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_QUICK_EVENTS_MSGS, true);
+    }
+    
+    public static boolean isExtendedQuickSpace(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_EXTENDED_QUICKSPACE, true);
     }
 }
