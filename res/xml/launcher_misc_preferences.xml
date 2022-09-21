@@ -43,10 +43,10 @@
         android:title="@string/background_blur_title"
         android:summary="@string/background_blur_desc"
         android:persistent="true"
-        android:max="46"
+        android:max="85"
         android:min="1"
         settings:units="px"
-        android:defaultValue="46" />
+        android:defaultValue="85" />
 
     <Preference
         android:key="pref_developer_options"
