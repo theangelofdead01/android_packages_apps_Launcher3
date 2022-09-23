@@ -172,20 +172,6 @@
     <icon drawable="@drawable/designer_tools" package="com.scheffsblend.designertools" name="Designer Tools" />
     <icon drawable="@drawable/deviantart" package="com.deviantart.android.damobile" name="DeviantArt" />
     <icon drawable="@drawable/device_info_hw" package="ru.andr7e.deviceinfohw" name="Device Info HW" />
-    <icon drawable="@drawable/dialer" package="com.android.contacts.activities.DialtactsActivity" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.android.contacts/com.android.contacts.DialtactsActivity" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.android.contacts/com.android.contacts.DialtactsActivityAlias" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.android.dialer" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.android.incallui" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.android.phone" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.asus.asusincallui" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.asus.dialer" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.chooloo.www.koler" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.google.android.dialer" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.oneplus.dialer" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.samsung.android.dialer" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.sh.smart.caller" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.truecaller" name="Phone" />
     <icon drawable="@drawable/digital_wellbeing" package="com.google.android.apps.wellbeing" name="Digital Wellbeing" />
     <icon drawable="@drawable/discord" package="com.aliucord" name="Aliucord" />
     <icon drawable="@drawable/discord" package="com.discord" name="Discord" />
