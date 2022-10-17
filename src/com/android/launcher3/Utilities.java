@@ -1058,11 +1058,11 @@ public final class Utilities {
 
     public static int getRecentsOpacity(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        return prefs.getInt(KEY_RECENTS_OPACITY, 40);
+        return prefs.getInt(KEY_RECENTS_OPACITY, 20);
     }
 
     public static int getAllAppsOpacity(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        return prefs.getInt(KEY_APP_DRAWER_OPACITY, 80);
+        return prefs.getInt(KEY_APP_DRAWER_OPACITY, 100);
     }
 }

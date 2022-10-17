@@ -142,18 +142,7 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
     }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { 
-        switch (key) {
-            case Utilities.KEY_BLUR_DEPTH:
-                LauncherAppState.getInstanceNoCreate().setNeedsRestart();
-                break;
-            case Utilities.KEY_VIBRATION_TOGGLE:
-                recreate();
-                break;
-            default:
-                break;
-        }
-    }
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {}
 
     private boolean startPreference(String fragment, Bundle args, String key) {
         if (Utilities.ATLEAST_P && getSupportFragmentManager().isStateSaved()) {

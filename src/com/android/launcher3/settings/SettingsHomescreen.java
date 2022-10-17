@@ -102,12 +102,6 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
         switch (key) {
             case Utilities.KEY_DOCK_SEARCH:
             case Utilities.SHOW_HOTSEAT_BG:
-            case Utilities.KEY_DOCK_THEME:
-            case Utilities.KEY_SEARCH_RADIUS:
-            case Utilities.KEY_STATUS_BAR:
-            case Utilities.KEY_QUICK_EVENTS_MSGS:
-            case Utilities.KEY_EXTENDED_QUICKSPACE:
-            case Utilities.DESKTOP_SHOW_QUICKSPACE:
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                 break;
             default:

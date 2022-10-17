@@ -566,9 +566,21 @@ public class Launcher extends StatefulActivity<LauncherState>
     }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences SharedPrefs, String key) {
-        if (key.equals(KEY_DARK_STATUS_BAR)) {
-            recreate();
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { 
+        switch (key) {
+            case KEY_DARK_STATUS_BAR:
+            case Utilities.KEY_BLUR_DEPTH:
+            case Utilities.KEY_DOCK_THEME:
+            case Utilities.KEY_EXTENDED_QUICKSPACE:
+            case Utilities.KEY_QUICK_EVENTS_MSGS:
+            case Utilities.KEY_SEARCH_RADIUS:
+            case Utilities.DESKTOP_SHOW_QUICKSPACE:
+            case Utilities.KEY_STATUS_BAR:
+            case Utilities.KEY_VIBRATION_TOGGLE:
+                recreate();
+                break;
+            default:
+                break;
         }
     }
 
