@@ -604,10 +604,6 @@ public class Launcher extends StatefulActivity<LauncherState>
         }
         mDeferOverlayCallbacks = true;
         checkIfOverlayStillDeferred();
-        
-        if (mQuickSpace != null) {
-            mQuickSpace.onPause();
-        }
     }
 
     @Override
@@ -1005,14 +1001,13 @@ public class Launcher extends StatefulActivity<LauncherState>
         } else {
             mOverlayManager.onActivityStopped(this);
         }
+        if (mQuickSpace != null) {
+            mQuickSpace.onPause();
+        }
         hideKeyboard();
         logStopAndResume(false /* isResume */);
         mAppWidgetHost.setActivityStarted(false);
         NotificationListener.removeNotificationsChangedListener(getPopupDataProvider());
-
-        if (mQuickSpace != null) {
-            mQuickSpace.onPause();
-        }
     }
 
     @Override
@@ -1020,6 +1015,11 @@ public class Launcher extends StatefulActivity<LauncherState>
         Object traceToken = TraceHelper.INSTANCE.beginSection(ON_START_EVT,
                 TraceHelper.FLAG_UI_EVENT);
         super.onStart();
+        
+        if (mQuickSpace != null) {
+            mQuickSpace.onResume();
+        }
+
         if (!mDeferOverlayCallbacks) {
             mOverlayManager.onActivityStarted(this);
         }
@@ -1027,9 +1027,6 @@ public class Launcher extends StatefulActivity<LauncherState>
         mAppWidgetHost.setActivityStarted(true);
         TraceHelper.INSTANCE.endSection(traceToken);
         
-        if (mQuickSpace != null) {
-            mQuickSpace.onResume();
-        }
     }
 
     @Override
@@ -1049,10 +1046,6 @@ public class Launcher extends StatefulActivity<LauncherState>
 
         DiscoveryBounce.showForHomeIfNeeded(this);
         mAppWidgetHost.setActivityResumed(true);
-        
-        if (mQuickSpace != null) {
-            mQuickSpace.onResume();
-        }
     }
 
     private void logStopAndResume(boolean isResume) {
@@ -1220,10 +1213,6 @@ public class Launcher extends StatefulActivity<LauncherState>
         AbstractFloatingView.closeAllOpenViewsExcept(this, false, TYPE_REBIND_SAFE);
         DragView.removeAllViews(this);
         TraceHelper.INSTANCE.endSection(traceToken);
-        
-        if (mQuickSpace != null) {
-            mQuickSpace.onResume();
-        }
     }
 
     @Override
@@ -1239,11 +1228,8 @@ public class Launcher extends StatefulActivity<LauncherState>
         if (!mDeferOverlayCallbacks) {
             mOverlayManager.onActivityPaused(this);
         }
+
         mAppWidgetHost.setActivityResumed(false);
-        
-        if (mQuickSpace != null) {
-            mQuickSpace.onPause();
-        }
     }
 
     /**
