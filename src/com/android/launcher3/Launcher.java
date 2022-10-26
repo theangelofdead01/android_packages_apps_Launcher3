@@ -550,6 +550,10 @@ public class Launcher extends StatefulActivity<LauncherState>
             getWindow().setSoftInputMode(LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
         }
         setTitle(R.string.home_screen);
+        
+        if (mQuickSpace != null) {
+            mQuickSpace.onResume();
+        }
     }
 
     protected LauncherOverlayManager getDefaultOverlay() {
@@ -1229,6 +1233,10 @@ public class Launcher extends StatefulActivity<LauncherState>
             mOverlayManager.onActivityPaused(this);
         }
 
+        if (mQuickSpace != null) {
+            mQuickSpace.onPause();
+        }
+
         mAppWidgetHost.setActivityResumed(false);
     }
 
@@ -1752,6 +1760,10 @@ public class Launcher extends StatefulActivity<LauncherState>
             mAppWidgetHost.stopListening();
         } catch (NullPointerException ex) {
             Log.w(TAG, "problem while stopping AppWidgetHost during Launcher destruction", ex);
+        }
+
+        if (mQuickSpace != null) {
+            mQuickSpace.onPause();
         }
 
         TextKeyListener.getInstance().release();
