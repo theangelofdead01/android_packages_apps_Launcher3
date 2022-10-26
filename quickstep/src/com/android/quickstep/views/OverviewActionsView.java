@@ -87,6 +87,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     private static final String KEY_RECENTS_KILL_APP = "pref_recents_kill_app";
     private static final String KEY_RECENTS_CLEAR_ALL_APP = "pref_recents_clear_all_app";
     private static final String KEY_RECENTS_LENS = "pref_recents_lens";
+    private static final String KEY_RECENTS_LOCK = "pref_recents_lock";
 
     private final MultiValueAlpha mMultiValueAlpha;
     private Button mSplitButton;
@@ -108,6 +109,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     private boolean mKillApp;
     private boolean mClearAllApp;
     private boolean mLens;
+    private boolean mLock;
 
     public OverviewActionsView(Context context) {
         this(context, null);
@@ -126,6 +128,7 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         mKillApp = prefs.getBoolean(KEY_RECENTS_KILL_APP, true);
         mClearAllApp = prefs.getBoolean(KEY_RECENTS_CLEAR_ALL_APP, true);
         mLens = prefs.getBoolean(KEY_RECENTS_LENS, false);
+        mLock = prefs.getBoolean(KEY_RECENTS_LOCK, true);
         prefs.registerOnSharedPreferenceChangeListener(this);
     }
 
@@ -145,6 +148,11 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         killApp.setVisibility(mKillApp ? VISIBLE : GONE);
         findViewById(R.id.kill_app_space).setVisibility(mKillApp ? VISIBLE : GONE);
         
+        View actionLock = findViewById(R.id.action_lock);
+        actionLock.setOnClickListener(this);
+        actionLock.setVisibility(mLock ? VISIBLE : GONE);
+        findViewById(R.id.action_lock_space).setVisibility(mLock ? VISIBLE : GONE);
+
         View clearAllApp = findViewById(R.id.action_clear_all);
         clearAllApp.setOnClickListener(this);
         clearAllApp.setVisibility(mClearAllApp ? VISIBLE : GONE);
@@ -214,6 +222,9 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
             updateVisibilities();
         } else if (key.equals(KEY_RECENTS_LENS)) {
             mLens = prefs.getBoolean(KEY_RECENTS_LENS, false);
+            updateVisibilities();
+        } else if (key.equals(KEY_RECENTS_LOCK)) {
+            mLock = prefs.getBoolean(KEY_RECENTS_LOCK, false);
             updateVisibilities();
         }
     }

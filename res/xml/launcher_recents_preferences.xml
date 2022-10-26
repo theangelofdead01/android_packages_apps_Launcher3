@@ -42,6 +42,12 @@
             android:persistent="true" />
 
         <SwitchPreference
+            android:key="pref_recents_lock"
+            android:title="@string/recents_lock_title"
+            android:defaultValue="true"
+            android:persistent="true" />
+
+        <SwitchPreference
             android:key="pref_recents_kill_app"
             android:title="@string/recents_kill_app"
             android:defaultValue="true"
