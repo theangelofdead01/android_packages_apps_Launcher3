@@ -20,7 +20,7 @@
     <dimen name="bg_searchbox_radius">1000dp</dimen>
 
     <!-- Overview scrolling scale animation -->
-    <dimen name="overview_scroll_scale">0.97</dimen>
+    <dimen name="overview_scroll_scale">0.95</dimen>
 
     <!-- Mid clear all button -->
     <dimen name="mid_clear_all_radius">1000dp</dimen>
