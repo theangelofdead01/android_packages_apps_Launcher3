@@ -1005,9 +1005,6 @@ public class Launcher extends StatefulActivity<LauncherState>
         } else {
             mOverlayManager.onActivityStopped(this);
         }
-        if (mQuickSpace != null) {
-            mQuickSpace.onPause();
-        }
         hideKeyboard();
         logStopAndResume(false /* isResume */);
         mAppWidgetHost.setActivityStarted(false);
@@ -1231,10 +1228,6 @@ public class Launcher extends StatefulActivity<LauncherState>
 
         if (!mDeferOverlayCallbacks) {
             mOverlayManager.onActivityPaused(this);
-        }
-
-        if (mQuickSpace != null) {
-            mQuickSpace.onPause();
         }
 
         mAppWidgetHost.setActivityResumed(false);
@@ -1760,10 +1753,6 @@ public class Launcher extends StatefulActivity<LauncherState>
             mAppWidgetHost.stopListening();
         } catch (NullPointerException ex) {
             Log.w(TAG, "problem while stopping AppWidgetHost during Launcher destruction", ex);
-        }
-
-        if (mQuickSpace != null) {
-            mQuickSpace.onPause();
         }
 
         TextKeyListener.getInstance().release();
