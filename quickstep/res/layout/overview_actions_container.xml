@@ -53,7 +53,7 @@
             style="@style/CustomOverviewActionButton"
             android:layout_width="60dp"
             android:layout_height="42dp"
-            android:foreground="@drawable/recents_locked"
+            android:foreground="@drawable/ic_recents_pin"
             android:foregroundGravity="center"
             android:visibility="gone" />
 
