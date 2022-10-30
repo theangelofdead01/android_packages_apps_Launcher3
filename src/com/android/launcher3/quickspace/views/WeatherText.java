@@ -151,7 +151,25 @@ public class WeatherText extends TextView implements
                         if (mWeatherEnabled == 2 || mWeatherEnabled == 4) {
                             setText(mWeatherData.temp);
                         } else if (mWeatherEnabled == 6) {
-                            setText(mWeatherData.temp + mWeatherData.tempUnits + " ~ " + mWeatherData.condition);
+                            String formattedCondition = mWeatherData.condition;
+                            if (formattedCondition.toLowerCase().contains("clouds")) {
+                              formattedCondition = "Cloudy";
+                            } else if (formattedCondition.toLowerCase().contains("rain")) {
+                              formattedCondition = "Rainy";
+                            } else if (formattedCondition.toLowerCase().contains("clear")) {
+                              formattedCondition = "Sunny";
+                            } else if (formattedCondition.toLowerCase().contains("storm")) {
+                              formattedCondition = "Stormy";
+                            } else if (formattedCondition.toLowerCase().contains("snow")) {
+                              formattedCondition = "Snowy";
+                            } else if (formattedCondition.toLowerCase().contains("wind")) {
+                              formattedCondition = "Windy";
+                            } else if (formattedCondition.toLowerCase().contains("mist")) {
+                              formattedCondition = "Misty";
+                            } else {
+                              formattedCondition = mWeatherData.condition;
+                            }
+                            setText(mWeatherData.temp + mWeatherData.tempUnits + " ~ "  + formattedCondition);
                         } else {
                             setText(mWeatherData.temp + mWeatherData.tempUnits);
                         }
