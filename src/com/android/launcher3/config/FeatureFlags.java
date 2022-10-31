@@ -110,7 +110,7 @@ public final class FeatureFlags {
             "IME_STICKY_SNACKBAR_EDU", true, "Show sticky IME edu in AllApps");
 
     public static final BooleanFlag ENABLE_PEOPLE_TILE_PREVIEW = getDebugFlag(
-            "ENABLE_PEOPLE_TILE_PREVIEW", false,
+            "ENABLE_PEOPLE_TILE_PREVIEW", true,
             "Experimental: Shows conversation shortcuts on home screen as search results");
 
     public static final BooleanFlag FOLDER_NAME_SUGGEST = new DeviceFlag(
@@ -251,7 +251,7 @@ public final class FeatureFlags {
             "Enables displaying the all apps button in the hotseat.");
 
     public static final BooleanFlag ENABLE_ALL_APPS_ONE_SEARCH_IN_TASKBAR = getDebugFlag(
-            "ENABLE_ALL_APPS_ONE_SEARCH_IN_TASKBAR", false,
+            "ENABLE_ALL_APPS_ONE_SEARCH_IN_TASKBAR", true,
             "Enables One Search box in Taskbar All Apps.");
 
     public static final BooleanFlag ENABLE_SPLIT_FROM_WORKSPACE = getDebugFlag(
