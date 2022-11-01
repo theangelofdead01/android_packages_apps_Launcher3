@@ -92,6 +92,7 @@
         android:layout_height="18dp" />
 
 	<com.android.launcher3.quickspace.views.WeatherText
+	style="@style/QuickSpaceText"
         android:id="@+id/weather_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
