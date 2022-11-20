@@ -581,6 +581,7 @@ public class Launcher extends StatefulActivity<LauncherState>
             case Utilities.DESKTOP_SHOW_QUICKSPACE:
             case Utilities.KEY_STATUS_BAR:
             case Utilities.KEY_VIBRATION_TOGGLE:
+            case Utilities.KEY_FORCE_WHITE_LABEL:
                 recreate();
                 break;
             default:
