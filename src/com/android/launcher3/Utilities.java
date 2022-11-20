@@ -180,6 +180,7 @@ public final class Utilities {
     public static final String KEY_STATUS_BAR = "pref_show_statusbar";
     public static final String KEY_RECENTS_OPACITY = "pref_recents_opacity";
     public static final String KEY_APP_DRAWER_OPACITY = "pref_app_drawer_opacity";
+    public static final String KEY_SHOW_MEM_INFO = "pref_show_meminfo";
 
     /**
      * Returns true if theme is dark.
@@ -1049,6 +1050,11 @@ public final class Utilities {
     	SharedPreferences prefs = getPrefs(context.getApplicationContext());
     	return prefs.getBoolean(KEY_VIBRATION_TOGGLE, true);
    }
+
+    public static boolean showMemInfo(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_SHOW_MEM_INFO, true);
+    }
 
     public static boolean canZoomWallpaper(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
