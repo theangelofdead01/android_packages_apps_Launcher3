@@ -105,9 +105,6 @@ import java.util.stream.Stream;
  */
 public abstract class BaseQuickstepLauncher extends Launcher {
 
-    // Type: float
-    private static final String BLUR_DEPTH = "blur.depth";
-
     private DepthController mDepthController = new DepthController(this);
     private QuickstepTransitionManager mAppTransitionManager;
 
@@ -142,8 +139,6 @@ public abstract class BaseQuickstepLauncher extends Launcher {
     @Override
     protected void onResume() {
         super.onResume();
-
-        mDepthController.onResume();
 
         if (mLauncherUnfoldAnimationController != null) {
             mLauncherUnfoldAnimationController.onResume();
@@ -213,18 +208,6 @@ public abstract class BaseQuickstepLauncher extends Launcher {
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
         RecentsModel.INSTANCE.get(this).onTrimMemory(level);
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle state) {
-        super.onRestoreInstanceState(state);
-        mDepthController.onRestoreState(state.getFloat(BLUR_DEPTH));
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putFloat(BLUR_DEPTH, mDepthController.getCurrentDepth());
-        super.onSaveInstanceState(outState);
     }
 
     @Override

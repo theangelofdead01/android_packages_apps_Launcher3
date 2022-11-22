@@ -139,9 +139,6 @@ public class DepthController implements StateHandler<LauncherState>,
      * @see android.service.wallpaper.WallpaperService.Engine#onZoomChanged(float)
      */
     private float mDepth;
-
-    private boolean mRestoreDepth;
-
     /**
      * Last blur value, in pixels, that was applied.
      * For debugging purposes.
@@ -167,19 +164,6 @@ public class DepthController implements StateHandler<LauncherState>,
 
     public DepthController(Launcher l) {
         mLauncher = l;
-    }
-
-    public void onRestoreState(float depth) {
-        mDepth = depth;
-        onResume();
-    }
-
-    public float getCurrentDepth() {
-        return mDepth;
-    }
-
-    public void onResume() {
-        mRestoreDepth = true;
     }
 
     private void ensureDependencies() {
@@ -304,10 +288,9 @@ public class DepthController implements StateHandler<LauncherState>,
         // Round out the depth to dedupe frequent, non-perceptable updates
         int depthI = (int) (depth * 256);
         float depthF = depthI / 256f;
-        if (Float.compare(mDepth, depthF) == 0 && !mRestoreDepth) {
+        if (Float.compare(mDepth, depthF) == 0) {
             return;
         }
-        mRestoreDepth = false;
         dispatchTransactionSurface(depthF);
         mDepth = depthF;
     }
