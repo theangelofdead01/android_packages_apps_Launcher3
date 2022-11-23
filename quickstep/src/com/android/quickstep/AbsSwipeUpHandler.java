@@ -432,7 +432,9 @@ public abstract class AbsSwipeUpHandler<T extends StatefulActivity<S>,
                     mRecentsView.onRecentsAnimationComplete();
                     if (mRecentsAnimationController != null) {
                         mRecentsAnimationController.cleanupScreenshot();
-                    } else if (mDeferredCleanupRecentsAnimationController != null) {
+                        mRecentsAnimationController = null;
+                    }
+                    if (mDeferredCleanupRecentsAnimationController != null) {
                         mDeferredCleanupRecentsAnimationController.cleanupScreenshot();
                         mDeferredCleanupRecentsAnimationController = null;
                     }
@@ -1942,7 +1944,6 @@ public abstract class AbsSwipeUpHandler<T extends StatefulActivity<S>,
         if (!controller.getFinishTargetIsLauncher()) {
             setDividerShown(true /* shown */, false /* immediate */);
         }
-        mRecentsAnimationController = null;
         mRecentsAnimationTargets = null;
         if (mRecentsView != null) {
             mRecentsView.setRecentsAnimationTargets(null, null);
